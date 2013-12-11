@@ -10,14 +10,14 @@ public class BookRestService {
 
     @GET
     @Path("{id}")
-    public Response getUserById(@PathParam("id") String id) {
-        return Response.status(200).entity("getUserById is called, id : " + id).build();
+    public Response getBookById(@PathParam("id") String id) {
+        return Response.status(200).entity("getBookById is called, id : " + id).build();
     }
 
 
     @GET
     @Path("{year}/{month}/{day}")
-    public Response getUserHistory(
+    public Response getBookHistory(
             @PathParam("year") int year,
             @PathParam("month") int month,
             @PathParam("day") int day) {
@@ -25,7 +25,7 @@ public class BookRestService {
         String date = year + "/" + month + "/" + day;
 
         return Response.status(200)
-                .entity("getUserHistory is called, year/month/day : " + date)
+                .entity("getBookHistory is called, year/month/day : " + date)
                 .build();
 
     }
