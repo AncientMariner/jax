@@ -9,4 +9,5 @@
     <context:component-scan base-package="rest.spring" />
 
     <bean id="transactionBo" class="rest.spring.TransactionBoImpl" />
+
 </beans>
