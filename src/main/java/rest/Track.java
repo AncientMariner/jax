@@ -1,6 +1,9 @@
 package rest;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class Track {
 
     String title;
@@ -9,7 +12,7 @@ public class Track {
     public String getTitle() {
         return title;
     }
-
+    @XmlElement
     public void setTitle(String title) {
         this.title = title;
     }
@@ -17,7 +20,7 @@ public class Track {
     public String getSinger() {
         return singer;
     }
-
+    @XmlElement
     public void setSinger(String singer) {
         this.singer = singer;
     }

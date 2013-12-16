@@ -16,6 +16,16 @@ public class JSONService {
         return track;
     }
 
+    @GET
+    @Path("/get")
+    @Produces(MediaType.APPLICATION_XML)
+    public Track getTrackInXML() {
+        Track track = new Track();
+        track.setTitle("Enter Sandman");
+        track.setSinger("Metallica");
+        return track;
+    }
+
     @POST
     @Path("/post")
     @Consumes(MediaType.APPLICATION_JSON)
