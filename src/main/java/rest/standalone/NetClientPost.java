@@ -1,23 +1,31 @@
-package rest;
+package rest.standalone;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class NetClientGet {
+public class NetClientPost {
 
-//    http://localhost:8080/rest/json/metallica/get
+//    http://localhost:8080/rest/json/metallica/post
     public static void main(String[] args) {
         try {
-            URL url = new URL("http://localhost:8080/rest/json/metallica/get");
+            URL url = new URL("http://localhost:8080/rest/json/metallica/post");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setRequestMethod("GET");
-            conn.setRequestProperty("Accept", "application/json");
+            conn.setDoOutput(true);
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/json");
 
-            if (conn.getResponseCode() != 200) {
+            String input = "{\"singer\":\"Metallica\",\"title\":\"Fade To Black\"}";
+
+            OutputStream os = conn.getOutputStream();
+            os.write(input.getBytes());
+            os.flush();
+
+            if (conn.getResponseCode() != HttpURLConnection.HTTP_CREATED) {
                 throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
             }
 

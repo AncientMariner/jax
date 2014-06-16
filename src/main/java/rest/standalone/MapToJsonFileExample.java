@@ -1,4 +1,4 @@
-package rest;
+package rest.standalone;
 
 import org.codehaus.jackson.map.ObjectMapper;
 

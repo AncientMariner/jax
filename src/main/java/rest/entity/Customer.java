@@ -1,4 +1,4 @@
-package rest;
+package rest.entity;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;

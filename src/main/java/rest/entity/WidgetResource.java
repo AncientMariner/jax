@@ -1,4 +1,4 @@
-package rest;
+package rest.entity;
 
 import javax.ws.rs.GET;
 

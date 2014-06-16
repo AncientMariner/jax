@@ -1,4 +1,4 @@
-package rest;
+package rest.logConfigurer;
 
 import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;

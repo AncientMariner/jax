@@ -1,4 +1,4 @@
-package rest;
+package rest.standalone;
 
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
