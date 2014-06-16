@@ -8,7 +8,6 @@ import java.io.File;
 
 @Path("/excel")
 public class ExcelService {
-
     private static final String FILE_PATH = "/home/xander/IdeaProjects/jax/excel.xls";
 
     @GET
@@ -22,7 +21,5 @@ public class ExcelService {
         response.header("Content-Disposition",
                 "attachment; filename=new-excel-file.xls");
         return response.build();
-
     }
-
 }

@@ -21,6 +21,5 @@ public class JsonToMapExample {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 }

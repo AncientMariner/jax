@@ -5,13 +5,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Track {
-
     String title;
     String singer;
 
     public String getTitle() {
         return title;
     }
+
     @XmlElement
     public void setTitle(String title) {
         this.title = title;
@@ -20,6 +20,7 @@ public class Track {
     public String getSinger() {
         return singer;
     }
+
     @XmlElement
     public void setSinger(String singer) {
         this.singer = singer;
@@ -29,5 +30,4 @@ public class Track {
     public String toString() {
         return "Track [title=" + title + ", singer=" + singer + "]";
     }
-
 }

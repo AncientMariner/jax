@@ -1,5 +1,7 @@
 package rest;
 
+import rest.entity.Customer;
+
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
@@ -8,7 +10,6 @@ import javax.ws.rs.core.MediaType;
 
 @Path("/xml/customer")
 public class XMLService {
-
     @GET
     @Path("/{pin}")
     @Produces(MediaType.APPLICATION_XML)
@@ -19,7 +20,5 @@ public class XMLService {
         customer.setPin(pin);
 
         return customer;
-
     }
-
 }

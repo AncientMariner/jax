@@ -9,8 +9,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class NetClientPost {
-
-//    http://localhost:8080/rest/json/metallica/post
     public static void main(String[] args) {
         try {
             URL url = new URL("http://localhost:8080/rest/json/metallica/post");

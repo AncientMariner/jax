@@ -9,9 +9,10 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.*;
 
+import static javax.ws.rs.core.Response.Status.OK;
+
 @Path("/fileU")
 public class UploadFileService {
-
     @POST
     @Path("/upload")
     @Consumes(MediaType.MULTIPART_FORM_DATA)
@@ -22,17 +23,16 @@ public class UploadFileService {
         // save it
         writeToFile(uploadedInputStream, uploadedFileLocation);
         String output = "File uploaded to : " + uploadedFileLocation;
-        return Response.status(200).entity(output).build();
+        return Response.status(OK).entity(output).build();
     }
 
     // save uploaded file to new location
     private void writeToFile(InputStream uploadedInputStream, String uploadedFileLocation) {
         try {
-            OutputStream out = new FileOutputStream(new File(uploadedFileLocation));
             int read = 0;
             byte[] bytes = new byte[1024];
 
-            out = new FileOutputStream(new File(uploadedFileLocation));
+            OutputStream out = new FileOutputStream(new File(uploadedFileLocation));
             while ((read = uploadedInputStream.read(bytes)) != -1) {
                 out.write(bytes, 0, read);
             }

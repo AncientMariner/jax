@@ -10,7 +10,6 @@ import javax.ws.rs.core.Response;
 @Component
 @Path("/payment")
 public class PaymentService {
-
     @Autowired
     TransactionBo transactionBo;
 
@@ -20,5 +19,4 @@ public class PaymentService {
         String result = transactionBo.save();
         return Response.status(200).entity(result).build();
     }
-
 }

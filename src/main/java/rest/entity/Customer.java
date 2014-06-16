@@ -6,7 +6,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "customer")
 public class Customer {
-
     String name;
     int pin;
 
@@ -27,5 +26,4 @@ public class Customer {
     public void setPin(int pin) {
         this.pin = pin;
     }
-
 }

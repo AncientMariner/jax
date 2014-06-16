@@ -6,7 +6,6 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Customer {
-
     String name;
     int age;
     int id;
@@ -37,5 +36,4 @@ public class Customer {
     public void setId(int id) {
         this.id = id;
     }
-
 }
