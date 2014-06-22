@@ -12,9 +12,10 @@ public class JAXBExample {
         customer.setId(100);
         customer.setName("name");
         customer.setAge(29);
+        final String FILE_PATH = "/home/xander/IdeaProjects/jax/file.xml";
 
         try {
-            File file = new File("/home/xander/IdeaProjects/jax/file.xml");
+            File file = new File(FILE_PATH);
             JAXBContext jaxbContext = JAXBContext.newInstance(Customer.class);
             Marshaller jaxbMarshaller = jaxbContext.createMarshaller();
 
@@ -24,7 +25,7 @@ public class JAXBExample {
             jaxbMarshaller.marshal(customer, file);
             jaxbMarshaller.marshal(customer, System.out);
 
-            File fileToGet = new File("/home/xander/IdeaProjects/jax/file.xml");
+            File fileToGet = new File(FILE_PATH);
             JAXBContext jaxbContext1 = JAXBContext.newInstance(Customer.class);
 
             Unmarshaller jaxbUnmarshaller = jaxbContext1.createUnmarshaller();

@@ -6,6 +6,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.nio.charset.Charset;
 
 public class NetClientGet {
     public static void main(String[] args) {
@@ -19,7 +20,7 @@ public class NetClientGet {
                 throw new RuntimeException("Failed : HTTP error code : " + conn.getResponseCode());
             }
 
-            BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream())));
+            BufferedReader br = new BufferedReader(new InputStreamReader((conn.getInputStream()), Charset.defaultCharset()));
 
             String output;
             System.out.println("Output from Server .... \n");

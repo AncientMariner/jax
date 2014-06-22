@@ -18,8 +18,9 @@ public class ImageService {
         File file = new File(FILE_PATH);
 
         ResponseBuilder response = Response.ok((Object) file);
-        response.header("Content-Disposition",
-                "attachment; filename=image_from_server.png");
+        final String NAME_OF_THE_HEADER = "Content-Disposition";
+        final String VALUE_OF_THE_HEADER = "attachment; filename=image_from_server.png";
+        response.header(NAME_OF_THE_HEADER, VALUE_OF_THE_HEADER);
         return response.build();
     }
 }

@@ -6,18 +6,19 @@ import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.node.ObjectNode;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.Charset;
 import java.util.Iterator;
 
 public class JacksonTreeNodeExample {
     public static void main(String[] args) {
         ObjectMapper mapper = new ObjectMapper();
+        final String FILE_PATH = "/home/xander/IdeaProjects/jax/user.json";
         try {
-            BufferedReader fileReader = new BufferedReader(new FileReader("/home/xander/IdeaProjects/jax/user.json"));
-            JsonNode rootNode = mapper.readTree(fileReader);
+            InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(FILE_PATH), Charset.defaultCharset());
+//            BufferedReader fileReader = new BufferedReader(new FileReader(FILE_PATH));
+//            JsonNode rootNode = mapper.readTree(fileReader);
+            JsonNode rootNode = mapper.readTree(inputStreamReader);
 
             /*** read ***/
             JsonNode nameNode = rootNode.path("name");
@@ -35,11 +36,11 @@ public class JacksonTreeNodeExample {
             }
 
             /*** update ***/
-            ((ObjectNode)rootNode).put("nickname", "new nickname");
-            ((ObjectNode)rootNode).put("name", "updated name");
-            ((ObjectNode)rootNode).remove("age");
+            ((ObjectNode) rootNode).put("nickname", "new nickname");
+            ((ObjectNode) rootNode).put("name", "updated name");
+            ((ObjectNode) rootNode).remove("age");
 
-            mapper.writeValue(new File("/home/xander/IdeaProjects/jax/user.json"), rootNode);
+            mapper.writeValue(new File(FILE_PATH), rootNode);
         } catch (JsonGenerationException e) {
             e.printStackTrace();
         } catch (JsonMappingException e) {

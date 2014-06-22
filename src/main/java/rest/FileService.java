@@ -16,7 +16,6 @@ public class FileService {
     @Path("/get")
     @Produces(MediaType.TEXT_PLAIN)
     public Response getFile() {
-
         File file = new File(FILE_PATH);
 
         ResponseBuilder response = Response.ok((Object) file);

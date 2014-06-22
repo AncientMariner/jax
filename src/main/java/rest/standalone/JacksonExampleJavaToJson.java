@@ -12,10 +12,11 @@ public class JacksonExampleJavaToJson {
     public static void main(String[] args) {
         User user = new User();
         ObjectMapper mapper = new ObjectMapper();
+        final String FILE_PATH = "/home/xander/IdeaProjects/jax/user.json";
 
         try {
             // convert user object to json string, and save to a file
-            File file = new File("/home/xander/IdeaProjects/jax/user.json");
+            File file = new File(FILE_PATH);
             mapper.writeValue(file, user);
 
             // display to console

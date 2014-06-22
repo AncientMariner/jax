@@ -23,10 +23,10 @@ public class MapToJsonFileExample {
 
         map.put("messages", list);
 
+        final String FILE_PATH = "/home/xander/IdeaProjects/jax/user.json";
         try {
             // write JSON to a file
-            mapper.writeValue(new File("/home/xander/IdeaProjects/jax/user.json"), map);
-
+            mapper.writeValue(new File(FILE_PATH), map);
         } catch (Exception e) {
             e.printStackTrace();
         }

@@ -9,12 +9,13 @@ import java.util.Map;
 
 public class JsonFileToMapExample {
     public static void main(String[] args) {
+        final String FILE_PATH = "/home/xander/IdeaProjects/jax/user.json";
         try {
             ObjectMapper mapper = new ObjectMapper();
 
             // read JSON from a file
             Map<String, Object> map = mapper.readValue(
-                    new File("/home/xander/IdeaProjects/jax/user.json"),
+                    new File(FILE_PATH),
                     new TypeReference<Map<String, Object>>() {
                     });
 
