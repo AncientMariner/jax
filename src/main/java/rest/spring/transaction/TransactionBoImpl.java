@@ -1,4 +1,4 @@
-package rest.spring;
+package rest.spring.transaction;
 
 public class TransactionBoImpl implements TransactionBo {
     public String save() {

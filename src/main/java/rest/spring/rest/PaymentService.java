@@ -1,7 +1,8 @@
-package rest.spring;
+package rest.spring.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import rest.spring.transaction.TransactionBo;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

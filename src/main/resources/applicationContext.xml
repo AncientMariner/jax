@@ -6,8 +6,8 @@
 	http://www.springframework.org/schema/context
 	http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <context:component-scan base-package="rest.spring" />
+    <context:component-scan base-package="rest.spring.rest" />
 
-    <bean id="transactionBo" class="rest.spring.TransactionBoImpl" />
+    <bean id="transactionBo" class="rest.spring.transaction.TransactionBoImpl" />
 
 </beans>

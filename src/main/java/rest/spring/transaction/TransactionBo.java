@@ -1,4 +1,4 @@
-package rest.spring;
+package rest.spring.transaction;
 
 public interface TransactionBo{
     String save();
