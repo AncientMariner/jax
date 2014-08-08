@@ -1,4 +1,4 @@
-package converter;
+package jaxb.converter;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
